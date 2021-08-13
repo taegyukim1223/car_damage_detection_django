@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>blog</title>
+    </head>
+    <body>
+        <nav>
+            <a href="/about_me/">contributor</a>
+        </nav>
+        <h1>blog</h1>
+
+    {% block content %}
+    {% endblock %}
+
+    {% for p in post_list %}  
+        <hr/>
+        <h2>{{ p.title }}</h2>
+        <h4>{{ p.created_at}}</h4>
+        <p>{{ p.content }}<p>
+        <div class="card mb-4">
+            <image class="card-img-top" src = "{{ p.head_image.url}}" alt = "Card image cap">
+
+            </image>
+        </div>
+    {% endfor %}
+
+    </body>
+</html>

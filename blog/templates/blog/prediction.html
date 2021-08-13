@@ -1,0 +1,26 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Plant Diseases Recognition</title>
+  </head>
+  <body>
+    <h1>Welcome to Car Model Recognition App</h1>
+
+    <form action="{% url "upload_image" %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- {{ form }} -->
+    <!-- <input type="file" name="upload_image"> -->
+    <button type="submit"  onClick="location.href='prediction.html'">Upload</button>
+  </form> 
+
+    <!-- <form action="{% url "prediction" %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+   
+    <button type="submit">Predict</button>
+  </form> -->
+    <h2>Prediction: {{ result }}</h2>
+    <img src="{%static 'detect/detect.png'%}">
+  </body>
+</html>
